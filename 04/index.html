@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            border: 1px solid black;
+            width: 1200px;
+            height: 500px;
+            margin: 10px auto;
+            position: relative;
+            list-style: none;
+            overflow: hidden;
+        }
+        .box2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+    </div>
+    <div class="box2">
+        <p>
+            <input type="text" id="inp">
+        </p>
+        <p>
+            <button id="btn1">发射</button>
+            <button id="btn2">清屏</button>
+        </p>
+    </div>
+    <script>
+        let btn1 = document.getElementById('btn1'),
+            btn2 = document.getElementById('btn2'),
+            inp = document.getElementById('inp'),
+            box1 = document.getElementById('box1'),
+            num = 0
+            btn1.addEventListener('click',() => {
+                let p = document.createElement('p')
+                num+=1
+                let id = 'p'+num
+                //添加唯一id
+                p.id = id
+                p.innerHTML=inp.value
+                p.style.position='absolute'
+                p.style.left = '1200px'
+                p.style.fontSize = parseInt(Math.random()*35)+'px'
+                p.style.top = parseInt(Math.random()*450)+'px'
+                p.style.color = `rgb(${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)})`
+                box1.appendChild(p)
+                let time = setInterval(() => {
+                    p.style.left =  parseInt(p.style.left)-1+'px'
+                    //通过唯一id值判断节点是否存在
+                    let item = document.getElementById(id)
+                    if(parseInt(p.style.left)<-500&&item){
+                        //节点存在删除节点并清除定时器
+                        box1.removeChild(p)
+                        clearInterval(time)
+                    }else if(!item){
+                        //节点不存在直接清除计时器
+                        clearInterval(time)
+                    }
+                },6.9444444)
+            })
+            btn2.addEventListener('click',() => {
+                let arr =  box1.childNodes
+                //倒序删除防止数组本身Bug
+                for(let i = arr.length-1;i>=0;i--){
+                    box1.removeChild(arr[i])
+                }
+            })
+    </script>
+</body>
+</html>

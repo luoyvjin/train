@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            display: flex;
+            background-color: black;
+            color: #fff;
+            cursor: pointer;
+        }
+        .box{
+            position: relative;
+        }
+        .item1{
+            line-height: 30px;
+            margin: 0 20px;
+        }
+        .box .item2{
+            position: absolute;
+            width: 100%;
+            display: none;
+            background-color: black;
+            color: #fff;
+        }
+        .box .item2 p{
+            text-align: center;
+        }
+        .box .item2 p:hover{
+            background-color: #ccc;
+        }
+        .box:hover  .item2{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="item1">主页</div>
+        <div class="item1">新闻</div>
+        <div class="box">
+            <div class="item1">下拉菜单</div>
+            <div class="item2">
+                <p>链接1</p>
+                <p>链接2</p>
+                <p>链接3</p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

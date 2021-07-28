@@ -1,0 +1,29 @@
+.title{
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px 0 ;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.content>div{
+    width: 50%;
+    height: 300px;
+}
+.text-box{
+    padding: 20px;
+}
+.icon-box{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.icon-box p{
+    margin: 0;
+    padding-left: 10px;
+}
+.icon-box img{
+    width: 30px;
+}

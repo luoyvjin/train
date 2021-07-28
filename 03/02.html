@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .item1 .action{
+            background-color: chartreuse;
+        }
+        .item1 p {
+            background-color: #ccc;
+            text-indent: 2em;
+            line-height: 30px;
+        }
+        .item1 p:hover{
+            background-color: chocolate;
+        }
+        .item2{
+            overflow: hidden;
+            background-color: black;
+            color: #fff;
+        }
+        .item2 div {
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        .item2 div:hover{
+            background-color: darkgreen;
+        }
+        .item2 .action{
+            background-color: darkgreen;
+        }
+        .item2 .left{
+            float: left;
+        }
+        .item2 .right{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>垂直</h1>
+        <div class="item1">
+            <p class="action">主页</p>
+            <p>新闻</p>
+            <p>联系</p>
+            <p>关于</p>
+        </div>
+        <h1>水平</h1>
+        <div class="item2">
+            <div class="left action">主页</div>
+            <div class="left">新闻</div>
+            <div class="left">联系</div>
+            <div class="right">关于</div>
+        </div>
+    </div>
+</body>
+</html>

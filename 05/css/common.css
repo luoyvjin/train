@@ -1,0 +1,44 @@
+.type-area{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.top-icon{
+    width: 20px;
+    vertical-align:sub;
+    height: 20px;
+}
+.top{
+    background-color: #f2f2f2;
+}
+.top>.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-link{
+    color: #000;
+}
+.footer{
+    background-color:#f2f2f2 ;
+}
+.footer-content>div{
+    width: 25%;
+}
+.footer-content>div>img{
+    width: 100%;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-content p{
+    text-align: center;
+}
+.footer-icon{
+    width: 300px;
+    border-top: 1px solid #bababa;
+    margin: 0 auto;
+}
+.center{
+    text-align: center;
+}

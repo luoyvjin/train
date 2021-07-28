@@ -1,0 +1,21 @@
+.title{
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+}
+.title p{
+    margin: 0;
+    margin-left: 20px;
+    font-size: 20px;
+}
+.title-icon{
+    background-color: #cd1637;
+    width: 5px;
+    height: 20px;
+}
+.img-box{
+    margin: 10px auto;
+    text-align: center;
+}
+.img-box img{
+    width: 100%;
+}
