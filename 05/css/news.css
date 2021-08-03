@@ -1,5 +1,5 @@
 .inner{
-    margin: 10px 0;
+    margin: 20px 0;
 }
 .text a{
     color: #000;
@@ -14,11 +14,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+.btn{
+    border-radius: 0;
+    border: 1px solid #000;
+}
 .paging{
-    margin: 0 auto;
+    margin: 10px auto;
     width: 200px;
     text-align: center;
 }
 .action{
-    color: red;
+    background-color: #010101;
+    color: #fff;
 }

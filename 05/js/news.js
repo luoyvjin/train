@@ -66,17 +66,40 @@ fetch('https://api.apiopen.top/getWangYiNews',{method:'POST',body:JSON.stringify
 }).catch(e=>{console.log(e)})
 
 //翻页
-let btnList = document.getElementsByClassName('btn')
+let btnList = document.getElementsByClassName('btn1'),
+back = document.getElementsByClassName('back'),
+go = document.getElementsByClassName('go')
 for(let i = 0;i<btnList.length;i++){
     btnList[i].addEventListener('click',(e)=>{
         //清楚激活样式
         for(let i = 0;i<btnList.length;i++){
-            btnList[i].className='btn'
+            btnList[i].className='btn1 btn'
         }
-        btnList[i].className='btn action'
+        btnList[i].className='btn1 btn action'
         pageIndex = i
         render(pageIndex,list)
     })
 }
+back[0].addEventListener('click',()=>{
+    if(pageIndex>0){
+        pageIndex-=1
+        render(pageIndex,list)
+        for(let i = 0;i<btnList.length;i++){
+            btnList[i].className='btn1 btn'
+        }
+        btnList[pageIndex].className='btn1 btn action'
+    }
+})
+go[0].addEventListener('click',()=>{
+    console.log(pageIndex)
+    if(pageIndex<2){
+        pageIndex+=1
+        render(pageIndex,list)
+        for(let i = 0;i<btnList.length;i++){
+            btnList[i].className='btn1 btn'
+        }
+        btnList[pageIndex].className='btn1 btn action'
+    }
+})
 
     

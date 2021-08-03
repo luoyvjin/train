@@ -55,10 +55,10 @@
                         <img data-src="./img/02.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img data-src="./img/03.jpg" class="d-block w-100" alt="...">
+                        <img data-src="./img/02.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img data-src="./img/04.jpg" class="d-block w-100" alt="...">
+                        <img data-src="./img/02.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
             </div>
@@ -147,28 +147,28 @@
             <h3>新闻动态</h3>
             <div class="news">
                 <div class="row">
-                    <div class="col-lg-3 col-sm-12 col-md-6 inner">
+                    <div class="col-lg-3 col-sm-12 col-md-6 inner" style="text-align: center;">
                         <img data-src="./img/12.jpg" alt="">
                         <p>蜘蛛侠vs毒液联盟&nbsp;奇谈般获得冠军 </p>
                         <div class="news-icon"></div>
                         <p class="section">Spider-Man vs. Venom Aliance Quest Boss Battle-Marvel Contest ofChampions蜘蛛侠
                             vs毒液联盟任务boss大战奇迹冠军大赛...</p>
                     </div>
-                    <div class="col-lg-3 col-sm-12 col-md-6 inner">
+                    <div class="col-lg-3 col-sm-12 col-md-6 inner" style="text-align: center;">
                         <img data-src="./img/13.jpg" alt="">
                         <p>蜘蛛侠vs毒液联盟&nbsp;奇谈般获得冠军 </p>
                         <div class="news-icon"></div>
                         <p class="section">Spider-Man vs. Venom Aliance Quest Boss Battle-Marvel Contest ofChampions蜘蛛侠
                             vs毒液联盟任务boss大战奇迹冠军大赛...</p>
                     </div>
-                    <div class="col-lg-3 col-sm-12 col-md-6 inner">
+                    <div class="col-lg-3 col-sm-12 col-md-6 inner" style="text-align: center;">
                         <img data-src="./img/14.webp" alt="">
                         <p>蜘蛛侠vs毒液联盟&nbsp;奇谈般获得冠军 </p>
                         <div class="news-icon"></div>
                         <p class="section">Spider-Man vs. Venom Aliance Quest Boss Battle-Marvel Contest ofChampions蜘蛛侠
                             vs毒液联盟任务boss大战奇迹冠军大赛...</p>
                     </div>
-                    <div class="col-lg-3 col-sm-12 col-md-6 inner">
+                    <div class="col-lg-3 col-sm-12 col-md-6 inner" style="text-align: center;">
                         <img data-src="./img/15.jpg" alt="">
                         <p>蜘蛛侠vs毒液联盟&nbsp;奇谈般获得冠军 </p>
                         <div class="news-icon"></div>
@@ -180,20 +180,20 @@
         </div>
         <div class="footer">
             <div class="type-area">
-                <div class="footer-content">
-                    <div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-12 col-md-6" style="text-align: center;">
                         <img data-src="./img/16.png" alt="">
                         <p>福州市仓山区万达广场B座</p>
                     </div>
-                    <div>
+                    <div class="col-lg-3 col-sm-12 col-md-6" style="text-align: center;">
                         <img data-src="./img/17.png" alt="">
                         <p>admin@qq.com</p>
                     </div>
-                    <div>
+                    <div class="col-lg-3 col-sm-12 col-md-6" style="text-align: center;">
                         <img data-src="./img/18.png" alt="">
                         <p>400-123-456</p>
                     </div>
-                    <div>
+                    <div class="col-lg-3 col-sm-12 col-md-6" style="text-align: center;">
                         <img data-src="./img/19.webp" alt="">
                         <p>扫一扫，加入复仇者联盟</p>
                     </div>
@@ -223,7 +223,6 @@
             })
         }
         function loadImg(el) {
-            console.log(el.src)
             if (!el.src) {
                 var source = el.dataset.src;
                 el.src = source;
