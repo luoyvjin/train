@@ -7,9 +7,11 @@
     display: flex;
     justify-content: space-between;
     margin: 40px 0;
+    padding: 0 20px;
 }
 .content>div{
     height: 300px;
+  
 }
 .text-box{
     padding: 20px;
