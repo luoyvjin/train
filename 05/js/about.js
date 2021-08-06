@@ -19,6 +19,7 @@ var options = {
         'fillOpacity': 0.25
     }
 }
+
 map.setZoom(15);
 // 同时引入工具条插件，比例尺插件和鹰眼插件
 AMap.plugin([
