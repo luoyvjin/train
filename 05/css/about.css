@@ -28,3 +28,14 @@
 .icon-box img{
     width: 30px;
 }
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.type-area{
+    flex-grow: 1;
+}
+html,body{
+    height: 100%;
+}
