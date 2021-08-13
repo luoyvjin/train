@@ -22,8 +22,11 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
@@ -56,15 +59,13 @@
     }
   },
   "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npm run lint:js",
-      "npx prettier --write",
-      "eslint src/*.js --fix-dry-run",
+    "src/*.{js,jsx,mjs,ts,tsx}": [
+      "node_modules/.bin/prettier --write",
+      "node_modules/.bin/eslint --fix",
       "git add"
     ],
-    "**/*.less": [
-      "stylelint --syntax less",
-      "npm run prettier",
+    "src/*.{css,scss,less,json,html,md,markdown}": [
+      "node_modules/.bin/prettier --write",
       "git add"
     ]
   }
