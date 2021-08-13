@@ -9,6 +9,7 @@
 }
 .top{
     background-color: #f2f2f2;
+    line-height: 50px;
 }
 .top>.nav{
     display: flex;
@@ -25,8 +26,14 @@
     margin: 20px 0;
 }
 .footer img{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: rgba(0, 0, 0, .5);
+}
+.navbar{
+    width: 100%;
 }
 .row{
     margin-left: 0;
@@ -46,4 +53,11 @@
 }
 .center{
     text-align: center;
+}
+@media(max-width:640px){
+    .col-sm-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }

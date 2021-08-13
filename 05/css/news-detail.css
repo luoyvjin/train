@@ -15,7 +15,26 @@
 .img-box{
     margin: 10px auto;
     text-align: center;
+    padding: 0 15px;
 }
 .img-box img{
     width: 100%;
+}
+.type-area p{
+    padding: 0 15px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.type-area{
+    flex-grow: 1;
+}
+html,body{
+    height: 100%;
+}
+#text p {
+    padding-left: 0;
+    padding-right: 0;
 }
