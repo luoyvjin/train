@@ -42,22 +42,41 @@ let render = (pageIndex, data) => {
 //     }
 // }).catch(e => { console.log(e) })
 render(0)
+let getpage = (variable) =>
+{
+       let query = window.location.search.substring(1);
+       let vars = query.split("&");
+       for (let i=0;i<vars.length;i++) {
+               let pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
 //翻页
 let btnList = document.getElementsByClassName('btn1'),
     back = document.getElementsByClassName('back'),
     go = document.getElementsByClassName('go')
+if (window.location.search) {
+    console.log(getpage('page'))
+    pageIndex = getpage('page')-1
+    btnList[getpage('page')-1].className = 'btn1 btn action'
+} else {
+    btnList[0].className = 'btn1 btn action'
+    }
 for (let i = 0; i < btnList.length; i++) {
     btnList[i].addEventListener('click', (e) => {
         //清楚激活样式
         for (let i = 0; i < btnList.length; i++) {
             btnList[i].className = 'btn1 btn'
         }
-        btnList[i].className = 'btn1 btn action'
         pageIndex = i
         render(pageIndex, list)
+        console.log(pageIndex)
+        window.location.search = `page=${i+1}`
     })
 }
 back[0].addEventListener('click', () => {
+    console.log(pageIndex)
     if (pageIndex > 0) {
         pageIndex -= 1
         render(pageIndex, list)
@@ -65,6 +84,7 @@ back[0].addEventListener('click', () => {
             btnList[i].className = 'btn1 btn'
         }
         btnList[pageIndex].className = 'btn1 btn action'
+        window.location.search = `page=${pageIndex+1}`
     }
 })
 go[0].addEventListener('click', () => {
@@ -76,6 +96,7 @@ go[0].addEventListener('click', () => {
             btnList[i].className = 'btn1 btn'
         }
         btnList[pageIndex].className = 'btn1 btn action'
+        window.location.search = `page=${pageIndex+1}`
     }
 })
 
