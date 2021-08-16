@@ -61,3 +61,9 @@
         max-width: 50%;
     }
 }
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-collapse{
+        position: absolute;
+        right: 0;
+    }
+}
