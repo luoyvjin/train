@@ -41,13 +41,15 @@
         <h2 class="title" style="margin: 0;">关于我们</h2>
         <div class="type-area" style="display: flex;align-items: center;">
             <div class="content row">
+                
                 <div id="container" class="col-lg-6 col-sm-24 col-md-12" style="margin: 10px 0; padding: 0 20px;"></div> 
                 
                 <div class=" col-lg-6 col-sm-24 col-md-12" style="margin: 10px 0;">
+                    
                     <p>复仇者联盟以拯救世界为已任，创始人为钢铁侠、雷神托尔、绿巨人、蚁人和黄蜂侠，从开始复仇者联思的成品名单便不断的变动第一期终日人就来队，改由单国队长加入不新更改的成员名单已成为复仇者联明的特点，但一个主器从未变过，那就是专与单一招级英雄无法应付的敌人作战。</p>
                     <div class="icon-box">
                         <img src="./img/16.png" alt="">
-                        <p>福州市仓山区万达广场B座</p>
+                        <div id="result"></div>
                     </div>
                     <div class="icon-box">
                         <img src="./img/17.png" alt="">
@@ -56,7 +58,9 @@
                     <div class="icon-box">
                         <img src="./img/18.png" alt="">
                         <p>400-123-456</p>
+                        
                     </div>
+                   
                 </div>
             </div>  
             
@@ -86,6 +90,34 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h4 class="modal-title" id="myModalLabel">联系我们</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <h4>意见反馈</h4>
+                    <textarea name="opinion" style="width: 100%;height: 200px;"></textarea>
+                    <hr>
+                    <h4>联系电话</h4>
+                    <input name="phone" style="width: 100%;height: 32px;" type="text">
+                    <hr>
+                    <h4>联系邮箱</h4>
+                    <input name="email" style="width: 100%;height: 32px;" type="email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button  type="button" class="btn btn-primary"
+                        data-dismiss="modal">提交反馈</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-toggle="modal" data-target="#myModal" style="position: fixed;bottom: 300px;right: 0;background-color: #ccc;padding: 5px;border-radius: 50%;"> <img src="./img/18.png" alt="" style="width: 50px;"></div>
     <script src="./js/jquery-3.5.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=816b5edd76995c4891948f9f473f646c"></script> 
