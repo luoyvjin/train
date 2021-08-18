@@ -76,8 +76,11 @@
     width: 280px;
 }
 .news  img{
-    width: 100%;
-    min-height: 180px;
+    /* width: 100%; */
+    object-fit:cover;
+    /* min-height: 180px; */
+    /* background-size: cover; */
+    
 }
 .section{
     font-size: 12px;

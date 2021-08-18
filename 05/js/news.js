@@ -11,7 +11,7 @@ let render = (pageIndex, data) => {
   fetch(
     `https://www.mxnzp.com/api/news/list?typeId=511&page=${
       pageIndex + 1
-    }&app_id=tuptqrlsymklfmf6&app_secret=WmN6QUd5Z3RzQTVLcFRsb2s1SUZvdz09`
+    }&app_id=pjicdnqppidvlzqh&app_secret=T0NaVEFldmFMdXNDVFRFVmQzZUdIQT09`
   )
     .then((res) => res.json())
     .then((res) => {
@@ -48,7 +48,7 @@ let render = (pageIndex, data) => {
 //         render(pageIndex, res.result)
 //     }
 // }).catch(e => { console.log(e) })
-render(0);
+
 let getpage = (variable) => {
   let query = window.location.search.substring(1);
   let vars = query.split("&");
@@ -60,17 +60,63 @@ let getpage = (variable) => {
   }
   return false;
 };
+function updateUrl(key, value) {
+  var newurl = updateQueryStringParameter(key, value);
+  //向当前url添加参数，没有历史记录
+  window.history.replaceState(
+    {
+      path: newurl,
+    },
+    "",
+    newurl
+  );
+}
+
+function updateQueryStringParameter(key, value) {
+  var uri = window.location.href;
+  if (!value) {
+    return uri;
+  }
+  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+  var separator = uri.indexOf("?") !== -1 ? "&" : "?";
+  if (uri.match(re)) {
+    return uri.replace(re, "$1" + key + "=" + value + "$2");
+  } else {
+    return uri + separator + key + "=" + value;
+  }
+}
+
 //翻页
 let btnList = document.getElementsByClassName("btn1"),
   back = document.getElementsByClassName("back"),
   go = document.getElementsByClassName("go");
+//禁用按钮
+disabledBtn = (pageIndex) => {
+  for (let i = 0; i < btnList.length; i++) {
+    btnList[i].disabled = false;
+  }
+  btnList[pageIndex - 1].disabled = true;
+  console.log(pageIndex);
+  back[0].disabled = false;
+  go[0].disabled = false;
+  if (pageIndex === 1) {
+    back[0].disabled = true;
+  } else if (pageIndex === 3) {
+    go[0].disabled = true;
+  }
+};
 if (window.location.search) {
   console.log(getpage("page"));
   pageIndex = getpage("page") - 1;
   btnList[getpage("page") - 1].className = "btn1 btn action";
+  render(pageIndex);
+  disabledBtn(pageIndex + 1);
 } else {
   btnList[0].className = "btn1 btn action";
+  render(0);
+  disabledBtn(1);
 }
+
 for (let i = 0; i < btnList.length; i++) {
   btnList[i].addEventListener("click", (e) => {
     //清楚激活样式
@@ -78,9 +124,12 @@ for (let i = 0; i < btnList.length; i++) {
       btnList[i].className = "btn1 btn";
     }
     pageIndex = i;
+    disabledBtn(pageIndex + 1);
+    btnList[i].className = "btn1 btn action";
     render(pageIndex, list);
     console.log(pageIndex);
-    window.location.search = `page=${i + 1}`;
+    // window.location.search = `page=${i + 1}`;
+    updateUrl("page", i + 1);
   });
 }
 back[0].addEventListener("click", () => {
@@ -92,7 +141,8 @@ back[0].addEventListener("click", () => {
       btnList[i].className = "btn1 btn";
     }
     btnList[pageIndex].className = "btn1 btn action";
-    window.location.search = `page=${pageIndex + 1}`;
+    updateUrl("page", pageIndex + 1);
+    disabledBtn(pageIndex + 1);
   }
 });
 go[0].addEventListener("click", () => {
@@ -104,6 +154,7 @@ go[0].addEventListener("click", () => {
       btnList[i].className = "btn1 btn";
     }
     btnList[pageIndex].className = "btn1 btn action";
-    window.location.search = `page=${pageIndex + 1}`;
+    updateUrl("page", pageIndex + 1);
+    disabledBtn(pageIndex + 1);
   }
 });
