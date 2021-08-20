@@ -18,7 +18,7 @@ console.log(getData("newsId"));
 fetch(
   ` https://www.mxnzp.com/api/news/details?newsId=${getData(
     "newsId"
-  )}&app_id=tuptqrlsymklfmf6&app_secret=WmN6QUd5Z3RzQTVLcFRsb2s1SUZvdz09`
+  )}&app_id=qo9rvolpwacpwhr7&app_secret=RnQ2MUErNjFIQW1uZld4NXFFOEVPUT09`
 )
   .then((res) => res.json())
   .then((res) => {
