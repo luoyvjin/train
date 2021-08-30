@@ -75,7 +75,13 @@ class Index extends React.Component {
   ) => {
     this.setState({ isLoading: true }, () => {
       fetch(url)
-        .then((res) => res.json())
+        .then((res) => {
+          if (res.status === 200 || res.status === 304) {
+            return res.json();
+          } else {
+            alert("请求频繁请稍后再试");
+          }
+        })
         .then((res) => {
           if (res.items) {
             this.setState({

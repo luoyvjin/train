@@ -11,7 +11,7 @@ let render = (pageIndex, data) => {
   fetch(
     `https://www.mxnzp.com/api/news/list?typeId=511&page=${
       pageIndex + 1
-    }&app_id=qo9rvolpwacpwhr7&app_secret=RnQ2MUErNjFIQW1uZld4NXFFOEVPUT09`
+    }&app_id=oyshpspfpwiovhnu&app_secret=UHAwWDQ0cTA1bkFYZ2RZa2FmV1o2UT09`
   )
     .then((res) => res.json())
     .then((res) => {
