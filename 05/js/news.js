@@ -11,7 +11,7 @@ let render = (pageIndex, data) => {
   fetch(
     `https://www.mxnzp.com/api/news/list?typeId=511&page=${
       pageIndex + 1
-    }&app_id=oyshpspfpwiovhnu&app_secret=UHAwWDQ0cTA1bkFYZ2RZa2FmV1o2UT09`
+    }&app_id=zmnqpwevlftkarjo&app_secret=OFFXdDdQa1ZDM01YK0prWjQwd3FBdz09`
   )
     .then((res) => res.json())
     .then((res) => {
@@ -33,7 +33,7 @@ let render = (pageIndex, data) => {
         });
         content.innerHTML = str;
       }
-      console.log(res);
+      // console.log(res);
     })
     .catch((e) => {
       console.log(e);
